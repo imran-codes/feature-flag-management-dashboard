@@ -22,6 +22,7 @@ export default function AdminPage() {
     title: "",
     description: "",
     imageUrl: "",
+    isFeatured: false,
   });
   const [editingRecipe, setEditingRecipe] = useState<Recipe | null>(null);
   const [flags, setFlags] = useState<FeatureFlagType[]>([]);
@@ -41,7 +42,13 @@ export default function AdminPage() {
 
   const handleAddRecipe = () => {
     addRecipe(newRecipe, setRecipes);
-    setNewRecipe({ id: 0, title: "", description: "", imageUrl: "" });
+    setNewRecipe({
+      id: 0,
+      title: "",
+      description: "",
+      imageUrl: "",
+      isFeatured: false,
+    });
   };
 
   const handleUpdateRecipe = () => {
